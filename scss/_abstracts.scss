@@ -1,0 +1,44 @@
+// colors 
+$darkBlue: #271aaf;
+$pink:#c861d1;
+$yellow:hsl(46deg 100% 53%);
+$lightPink:#fbe7ff;
+$lightblack:#cccccc;
+$black:#252525;
+$white:white;
+
+//fonts
+$primary-font:sans-serif;
+
+
+//mixins
+@mixin transition{
+    transition: all .3s ease;
+}
+    // d = desktop 1280 -> 
+    // l = laptop 960 -> 1280
+    // t = tablet 500 -> 959
+    // m = mobile 320 -> 499
+
+@mixin responsive($type) {
+    @if $type == m {
+ 
+         @media (min-width:320px) and (max-width: 499px) { @content };
+ 
+    }
+    @if $type == t {
+ 
+         @media (min-width:500px) and (max-width: 959px) { @content };
+ 
+     }
+     @if $type == l {
+ 
+         @media (min-width:960px) and (max-width: 1279px) { @content };
+ 
+ }
+    @if $type == d {
+ 
+         @media (min-width:1280px) { @content };
+ 
+     }
+ }

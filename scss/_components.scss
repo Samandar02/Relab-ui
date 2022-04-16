@@ -1,0 +1,27 @@
+.btn{
+    border: 0;
+    outline: 0;
+    width: 116px;
+    height: 33px;
+    border-radius: 20px;
+    &-primary{
+        color: $white;
+        background-color: $yellow;
+        @include transition;
+        &:hover{
+            color: $yellow;
+            background-color: $white;
+        }
+    }
+    &-outline-pink{
+        color: darken($lightPink,30px);
+        border: 1px solid;
+        background-color: $white;
+        @include transition;
+        &:hover{
+            color: $white;
+            background-color: darken($lightPink,30px);
+        }
+    }
+
+}

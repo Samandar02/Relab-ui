@@ -1,0 +1,437 @@
+.b{
+    border: 1px solid;
+}
+
+////////// grid system
+.container{
+    &-fluid{
+      width: 100% !important;  
+    }
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /// row grid
+    .row{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        &-c{
+            flex-direction: column;
+        }
+    }
+    /// .col[n]-[m] n talik ustundan m inchi  
+    .col2-1{
+        width: 50%;
+    }
+    .col2-2{
+        width: 100%;
+    }
+    .col3-1{
+        width: 33.33%;
+        @include transition;
+        @include responsive(t){
+            width: 50%;
+        }
+        @include transition;
+        @include responsive(m){
+            width: 100%;
+        }
+    }
+    .col3-2{
+        width: 66.66%;
+        @include transition;
+        @include responsive(t){
+            width: 100%;
+         }
+        @include responsive(m){
+            width: 100%;
+         }
+    }
+    .col3-3{
+        width: 99.99%;
+    }
+
+    .col4-1{
+        width: 25%;
+        @include transition;
+        @include responsive(t){
+            width: 50%;
+        }
+        @include responsive(m){
+            width: 100%;
+        }
+    }
+    .col4-2{
+        width: 50%;
+    }
+    .col4-3{
+        width: 75%;
+    }
+    .col4-4{
+        width: 100%;
+    }
+
+}
+
+.hero{
+    background-image: linear-gradient(45deg, $pink,$darkBlue 90%);
+    height: 300px;
+    background-repeat: no-repeat;
+}
+.nav{
+    @include transition;
+    @include responsive(l){
+       margin-left: 3%;
+       text-align: center;
+    }
+    @include responsive(t){
+        .hiddenble{
+            display: none;
+        }        
+     }
+    @include responsive(m){
+        .hiddenble{
+            display: none;
+        }        
+     }
+    margin-left: 16%;
+    ul{
+        li{
+            vertical-align: middle;
+            input{
+                width: 260px;
+                height: 30px;
+                padding: 5px;
+                border: 0;
+                outline: 0;
+            }
+            font-size: 18px;
+            &:first-child{
+                font-weight: 800;
+                font-size: 32px;
+            }
+            margin:12px 20px;
+            display: inline-block;
+            
+        }
+    }
+}
+.hero{
+    height: auto;
+    .hero-text{
+        overflow: hidden;
+    }
+    img{
+        padding-left: 12%;
+        width: 700px;
+        float: left;
+        transform: translateY(40px);
+        @include transition;
+        @include responsive(l){
+            width: 500px;
+        }
+        @include responsive(t){
+            width: 480px;
+        }
+        @include responsive(m){
+            width: 500px;
+        }
+    }
+   
+    .hero-content{
+        margin:0 30px;
+        color: $white;
+        float: left;
+        @include transition;
+        @include responsive(l){
+            float: right;
+        }
+        .content{
+            margin: auto;
+            padding-top: 60px;
+            width: 335px;
+        h1{
+            font-size:60px;
+            @include transition;
+            @include responsive(l){
+                font-size: 40px;
+             }
+            @include responsive(m){
+                font-size: 30px;
+             }
+        }
+        }
+    }
+    
+}
+.mb-3{
+    margin-top: 15px;
+    @include transition;
+    @include responsive(m){
+        margin: 15px 0;
+    }
+}
+.bg-pink{
+    background-color: $lightPink;
+}
+.pb-5{
+    padding-bottom: 50px;
+}
+.service-card{
+    padding: 50px 10px;
+    overflow: auto;
+    .col{
+        float: left;
+        padding-right: 12px;
+
+        h3,p{
+            width: 90%;
+        }
+    }
+    .w7{
+        width: 80%;
+    }
+    i{
+        transform: scale(1.5,1.5);
+        color: darken($lightPink,10px);
+    }
+}
+.products{
+    h3,h4,h5{
+        padding: 10px 0;
+        margin: auto;
+        text-align: center;
+        width: 50%;
+    }
+}
+.card-content{
+    img{
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        padding: 20px 0;
+    }
+    .card{
+        min-width: 240px;
+        text-align: center;
+        padding-bottom:50px ;
+        p{
+          width: 270px;  
+        }
+    }
+}
+.sales{
+    text-align: start;
+    vertical-align: middle;
+    .container{
+        justify-content: end;
+    }
+    .row{
+        padding-top: 50px;
+    }
+    h5,h1{
+        padding: 10px 0;
+        text-align: center;
+    }
+    p,h3{
+        display: inline-block;
+    }
+    .card{
+        background-color: $white;
+        margin: 10px;
+        padding: 10px;
+        overflow: auto;
+        text-align: center;
+        @include transition;
+        @include responsive(t){
+            overflow: hidden;
+        }
+        .card-title{
+            width: 180px;
+            padding-top: 20px;
+            padding-left: 10px;
+            @include transition;
+            @include responsive(t){
+                width: 170px;
+            }
+            button,p,h3{
+                margin: 5px;
+            }
+        }
+    }
+    div[class^="card-"]{
+        float: left;
+    }
+    
+    img{
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+
+    }
+
+}
+.flush-cards{
+    width: 100%;
+    padding-top: 45px;
+    padding-bottom: 30px;
+    overflow: auto;
+    
+    img{
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+    }
+    a{
+        color: $lightblack;
+        
+        @include transition;
+        &:hover{
+            color: $black; 
+        }
+    }
+    ul{
+        li{
+            display: inline-block;
+            padding: 10px;
+        }
+    }
+    .flush-content{
+        clear: both;
+        width: 100%;
+        @include transition;
+        @include responsive(l){
+            margin: 5%;
+        }
+        
+        .flush-img{
+            text-align: center;
+        }
+
+        .flush-card{
+            min-width: 190px;
+            background-color: $white;
+            padding-bottom: 30px;
+            box-shadow: 9px 9px 30px darken($lightblack,10);
+            width: 20%;
+            float: left;
+            margin-right: 5%;
+            @include transition;
+            @include responsive(l){
+                margin-right: 0;
+             }
+            @include responsive(t){
+                margin-right: 0;
+             }
+            .flush-title{
+                width: 60%;
+                margin: auto;
+            }
+            .flush-price{
+                float: left;
+                padding-left: 15%;
+                p{
+                    padding: 10px;
+                }
+            }
+            .flush-like{
+                float: right;
+                padding-right: 15%;
+                span{
+                    width: 37px;
+                    height: 37px;
+                    display: inline-block;
+                    padding: 9.5px;
+                    border: 1px solid darken($lightPink,10);
+                    border-radius: 20px;
+                    vertical-align: middle;
+                    i{
+                        color: darken($lightPink, 10);
+                    }
+                }
+            }
+        }
+    }
+    .pag{
+        justify-content: center;
+        margin-top: 50px;
+       span{
+        text-align: center;
+        width: 37px;
+        height: 37px;
+        display: inline-block;
+        padding: 9.5px;
+        margin: 10px;
+        border: 1px solid darken($lightPink,10);
+        border-radius: 20px;
+        vertical-align: middle;
+        i{
+            color: darken($lightPink, 10);
+            transform: scale(1.5,1.5);
+        }
+       } 
+    }
+}
+
+footer{
+    .c{
+        align-items: center;
+    }
+    span{
+        text-align: center;
+        width: 37px;
+        height: 37px;
+        @include transition;
+        @include responsive(m){
+            width: 30px;
+            height: 30px;
+        }
+        display: inline-block;
+        padding: 9.5px;
+        margin: 10px;
+        border: 1px solid darken($lightPink,10);
+        border-radius: 20px;
+        vertical-align: middle;
+        i{
+            color: darken($lightPink, 10);
+            transform: scale(1.5,1.5);
+            @include transition;
+            @include responsive(m){
+                transform: translate(-4px,-3px) scale(1,1)
+            }
+        }
+    }
+    a{
+        color: darken($lightblack, 10);
+        
+    }
+    li{
+        list-style: none;
+        padding: 10px 0;
+        color: darken($lightblack, 50);
+        
+    }
+}
+.m-n{
+    padding: 20px;
+}
+div[class="head-title"]{
+    float: left;
+}
+div[class="head-items"]{
+    float: right;
+}
+.container-c{
+    width: 80%;
+    margin: auto;
+}
+.container-cc{
+    width: 90%;
+    margin: auto;
+}
+.cls{
+    clear: both;
+}
